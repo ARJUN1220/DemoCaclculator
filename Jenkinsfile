@@ -4,7 +4,7 @@ pipeline{
         maven 'maven'
     }
     environment {
-            DOCKER_IMAGE_NAME = 'javacalculator'
+            //DOCKER_IMAGE_NAME = 'javacalculator'
             GITHUB_REPO_URL = 'https://github.com/ARJUN1220/DemoCaclculator.git'
         }
 
@@ -17,37 +17,4 @@ pipeline{
                     }
                 }
             }
-
-//             stage('Build Docker Image') {
-//                 steps {
-//                     script {
-//                         // Build Docker image
-//                         docker.build("${DOCKER_IMAGE_NAME}", '.')
-//                     }
-//                 }
-//             }
-//
-//             stage('Push Docker Images') {
-//                 steps {
-//                     script{
-//                         docker.withRegistry('', 'DockerHubCred') {
-//                         sh 'docker tag calculator iiitb/calculator:latest'
-//                         sh 'docker push iiitb/calculator'
-//                         }
-//                      }
-//                 }
-//             }
-//
-//        stage('Run Ansible Playbook') {
-//                 steps {
-//                     script {
-//                         ansiblePlaybook(
-//                             playbook: 'deploy.yml',
-//                             inventory: 'inventory'
-//                          )
-//                     }
-//                 }
-//             }
-//
-//         }
 }
