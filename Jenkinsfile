@@ -33,6 +33,11 @@ pipeline{
                 }
             }
 
+             stage('Test'){
+                steps{
+                    sh 'maven Test'
+                }
+             }
 
         }
 }
