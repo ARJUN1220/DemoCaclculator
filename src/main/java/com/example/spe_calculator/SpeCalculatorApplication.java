@@ -26,16 +26,26 @@ public class SpeCalculatorApplication {
 
             switch (choice) {
                 case 1:
-                    squareRoot();
+                    System.out.print("Enter a number for square root: ");
+                    double sqrtInput = scanner.nextDouble();
+                    System.out.println("Square root: " + squareRoot(sqrtInput));
                     break;
                 case 2:
-                    factorial();
+                    System.out.print("Enter a number for factorial: ");
+                    int factorialInput = scanner.nextInt();
+                    System.out.println("Factorial: " + factorial(factorialInput));
                     break;
                 case 3:
-                    naturalLogarithm();
+                    System.out.print("Enter a number for natural logarithm: ");
+                    double lnInput = scanner.nextDouble();
+                    System.out.println("Natural logarithm: " + naturalLogarithm(lnInput));
                     break;
                 case 4:
-                    powerFunction();
+                    System.out.print("Enter the base (x) for the power function: ");
+                    double powerBase = scanner.nextDouble();
+                    System.out.print("Enter the exponent (b) for the power function: ");
+                    double powerExponent = scanner.nextDouble();
+                    System.out.println("Power function: " + powerFunction(powerBase, powerExponent));
                     break;
                 case 5:
                     System.out.println("Exiting the calculator. Goodbye!");
@@ -47,43 +57,25 @@ public class SpeCalculatorApplication {
         }
     }
 
-    private static void squareRoot() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter a number for square root: ");
-        double x = scanner.nextDouble();
-        double result = Math.sqrt(x);
-        System.out.println("Square root of " + x + " is: " + result);
+    public static double squareRoot(double x) {
+        return Math.sqrt(x);
     }
 
-    private static void factorial() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter a number for factorial: ");
-        int x = scanner.nextInt();
+    public static long factorial(int x) {
         long result = 1;
 
         for (int i = 2; i <= x; i++) {
             result *= i;
         }
 
-        System.out.println("Factorial of " + x + " is: " + result);
+        return result;
     }
 
-    private static void naturalLogarithm() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter a number for natural logarithm: ");
-        double x = scanner.nextDouble();
-        double result = Math.log(x);
-        System.out.println("Natural logarithm of " + x + " is: " + result);
+    public static double naturalLogarithm(double x) {
+        return Math.log(x);
     }
 
-    private static void powerFunction() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter the base (x) for the power function: ");
-        double x = scanner.nextDouble();
-        System.out.print("Enter the exponent (b) for the power function: ");
-        double b = scanner.nextDouble();
-        double result = Math.pow(x, b);
-        System.out.println(x + " raised to the power of " + b + " is: " + result);
-
+    public static double powerFunction(double x, double b) {
+        return Math.pow(x, b);
     }
 }
