@@ -8,6 +8,7 @@ public class SpeCalculatorApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(SpeCalculatorApplication.class, args);
-    }
 
+        System.out.println("hello world");
+    }
 }
