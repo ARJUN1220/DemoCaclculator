@@ -4,7 +4,7 @@ pipeline{
         maven 'maven'
     }
     environment {
-            //DOCKER_IMAGE_NAME = 'javacalculator'
+            DOCKER_IMAGE_NAME = 'javacalculator'
             GITHUB_REPO_URL = 'https://github.com/ARJUN1220/DemoCaclculator.git'
     }
 
@@ -23,5 +23,16 @@ pipeline{
                     sh 'mvn clean install'
                 }
             }
+
+            stage('Build Docker Image') {
+                        steps {
+                            script {
+                                // Build Docker image
+                                docker.build("${DOCKER_IMAGE_NAME}", '.')
+                            }
+                        }
+                    }
+
+
         }
 }
