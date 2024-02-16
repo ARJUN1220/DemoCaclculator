@@ -6,7 +6,7 @@ pipeline{
     environment {
             //DOCKER_IMAGE_NAME = 'javacalculator'
             GITHUB_REPO_URL = 'https://github.com/ARJUN1220/DemoCaclculator.git'
-        }
+    }
 
         stages {
             stage('Checkout') {
@@ -17,5 +17,9 @@ pipeline{
                     }
                 }
             }
+            }
+
+            stage('Build maven'){
+                sh 'mvn clean install'
             }
 }
