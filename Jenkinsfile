@@ -4,7 +4,7 @@ pipeline{
         maven 'maven'
     }
     environment {
-            DOCKER_IMAGE_NAME = 'javacalculator'
+            DOCKER_IMAGE_NAME = 'spe_calculator'
             GITHUB_REPO_URL = 'https://github.com/ARJUN1220/DemoCaclculator.git'
     }
 
