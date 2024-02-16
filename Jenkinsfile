@@ -4,10 +4,14 @@ pipeline{
         maven 'maven'
     }
     stages{
+        stage('clone git'){
+            steps{
+                git 'https://github.com/ARJUN1220/DemoCaclculator.git'
+            }
+        }
         stage('Build maven'){
             steps{
-                checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/ARJUN1220/DemoCaclculator.git']])
-                sh 'mvn clean install'
+                sh 'maven clean install'
             }
         }
     }
