@@ -20,4 +20,4 @@
         name: docker
         state: started
     - name: Running container
-      shell: docker run -it --name spe_calculator arjun201/spe_calculator
+      shell: docker run -it -d --name spe_calculator arjun201/spe_calculator
