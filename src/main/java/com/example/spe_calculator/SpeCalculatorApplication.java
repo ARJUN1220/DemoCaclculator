@@ -14,12 +14,15 @@ public class SpeCalculatorApplication {
         Scanner scanner = new Scanner(System.in);
 
         while (true) {
-            System.out.println("Scientific Calculator Menu:");
+            System.out.println("*****************************");
+            System.out.println("*   Scientific Calculator    *");
+            System.out.println("******************************");
             System.out.println("1. Square root function - √x");
             System.out.println("2. Factorial function - x!");
             System.out.println("3. Natural logarithm (base е) - ln(x)");
             System.out.println("4. Power function - x^b");
             System.out.println("5. Exit");
+            System.out.println("******************************");
 
             System.out.print("Enter your choice (1-5): ");
             int choice = scanner.nextInt();
